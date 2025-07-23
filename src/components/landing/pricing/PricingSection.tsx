@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/landing/ui/button";
 import { CardSpotlight } from "./CardSpotlight";
 
 const PricingTier = ({

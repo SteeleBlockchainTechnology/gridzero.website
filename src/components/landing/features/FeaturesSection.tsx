@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/landing/ui/tabs";
 import { FeatureTab } from "./FeatureTab";
 import { FeatureContent } from "./FeatureContent";
 import { features } from "@/config/features";

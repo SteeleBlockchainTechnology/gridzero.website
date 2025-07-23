@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Command } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Navigation from "@/components/Navigation";
-import { FeaturesSection } from "@/components/features/FeaturesSection";
-import { PricingSection } from "@/components/pricing/PricingSection";
-import LogoCarousel from "@/components/LogoCarousel";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import Footer from "@/components/Footer";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { Button } from "@/components/landing/ui/button";
+import Navigation from "@/components/landing/Navigation";
+import { FeaturesSection } from "@/components/landing/features/FeaturesSection";
+import { PricingSection } from "@/components/landing/pricing/PricingSection";
+import LogoCarousel from "@/components/landing/LogoCarousel";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import Footer from "@/components/landing/Footer";
+import { TextGenerateEffect } from "@/components/landing/ui/text-generate-effect";
 
 const Index = () => {
   return (
