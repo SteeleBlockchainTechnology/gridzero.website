@@ -9,12 +9,18 @@ const PricingTier = ({
   description,
   features,
   isPopular,
+  buttonText,
+  buttonLink,
+  billingPeriod,
 }: {
   name: string;
   price: string;
   description: string;
   features: string[];
   isPopular?: boolean;
+  buttonText: string;
+  buttonLink: string;
+  billingPeriod?: string;
 }) => (
   <CardSpotlight className={`h-full ${isPopular ? "border-primary" : "border-white/10"} border-2`}>
     <div className="relative h-full p-6 flex flex-col">
@@ -26,7 +32,7 @@ const PricingTier = ({
       <h3 className="text-xl font-medium mb-2">{name}</h3>
       <div className="mb-4">
         <span className="text-4xl font-bold">{price}</span>
-        {price !== "Custom" && <span className="text-gray-400">/month</span>}
+        {price !== "Custom" && billingPeriod && <span className="text-gray-400">/{billingPeriod}</span>}
       </div>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3 mb-8 flex-grow">
@@ -37,8 +43,11 @@ const PricingTier = ({
           </li>
         ))}
       </ul>
-      <Button className="button-gradient w-full">
-        Start Trading
+      <Button 
+        className="button-gradient w-full" 
+        onClick={() => window.open(buttonLink, '_blank')}
+      >
+        {buttonText}
       </Button>
     </div>
   </CardSpotlight>
@@ -77,6 +86,9 @@ export const PricingSection = () => {
             "General chat support",
             "Basic trading tools",
           ]}
+          buttonText="Join Discord"
+          buttonLink="https://discord.gg/DKf2mnUDMp"
+          billingPeriod="month"
         />
         <PricingTier
           name="Professional"
@@ -89,10 +101,13 @@ export const PricingSection = () => {
             "AI trading signals",
           ]}
           isPopular
+          buttonText="Subscribe Now"
+          buttonLink="https://www.launchpass.com/gz/gridzero"
+          billingPeriod="month"
         />
         <PricingTier
-          name="Market Master"
-          price="$300"
+          name="Professional Plus"
+          price="$1200"
           description="One on one mentorship and custom AI tools"
           features={[
             "Custom trading solutions",
@@ -101,6 +116,9 @@ export const PricingSection = () => {
             "Mentorship from experts in AI and trading",
             "Priority support"
           ]}
+          buttonText="Subscribe Now"
+          buttonLink="https://www.launchpass.com/gz/gridzero"
+          billingPeriod="year"
         />
       </div>
     </section>

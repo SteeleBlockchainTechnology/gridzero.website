@@ -65,15 +65,33 @@ const Index = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
-            <Button size="lg" className="button-gradient">
-              Start Trading Now
+            <Button
+              size="lg"
+              className="button-gradient"
+              asChild
+            >
+              <a
+                href="https://discord.gg/DKf2mnUDMp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Start Trading Now
+              </a>
             </Button>
             <Button size="lg" variant="link" className="text-white">
-              View Markets <ArrowRight className="ml-2 w-4 h-4" />
+              <a
+                href="https://coinmarketcap.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                View Markets <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
             </Button>
           </motion.div>
         </div>
 
+        {/* 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,6 +106,7 @@ const Index = () => {
             />
           </div>
         </motion.div>
+        */}
       </motion.section>
 
       {/* Logo Carousel */}
@@ -130,10 +149,16 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join thousands of traders who have already discovered the power of our platform.
           </p>
-          <Button size="lg" className="button-gradient">
-            Master the Markets
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+            <Button size="lg" className="button-gradient" asChild>
+            <a
+              href="https://discord.gg/DKf2mnUDMp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Master the Markets
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
+            </Button>
         </motion.div>
       </section>
 

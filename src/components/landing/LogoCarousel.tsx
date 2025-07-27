@@ -5,42 +5,22 @@ const LogoCarousel = () => {
     "/dextools.svg",
     "/discord-icon.svg",
     "/tradingview-seeklogo.svg",
-    "/groq.svg",
-    "/ollama.svg",
+    "/groq.png",
+    "/ollama.png",
   ];
 
-  const extendedLogos = [...logos, ...logos, ...logos];
+  // Create enough logo copies to fill wide screens seamlessly
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <div className="w-full overflow-hidden bg-background/50 backdrop-blur-sm py-12 mt-20">
-      <motion.div 
-        className="flex space-x-16"
-        initial={{ opacity: 0, x: "0%" }}
-        animate={{
-          opacity: 1,
-          x: "-50%"
-        }}
-        transition={{
-          opacity: { duration: 0.5 },
-          x: {
-            duration: 15, // Reduced from 25 to 15 seconds
-            repeat: Infinity,
-            ease: "linear",
-            delay: 0.5
-          }
-        }}
-        style={{
-          width: "fit-content",
-          display: "flex",
-          gap: "4rem"
-        }}
-      >
-        {extendedLogos.map((logo, index) => (
+      <div className="flex animate-scroll">
+        {duplicatedLogos.map((logo, index) => (
           <motion.img
             key={`logo-${index}`}
             src={logo}
-            alt={`Partner logo ${index + 1}`}
-            className="h-8  bg-transparent rounded grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200"
+            alt={`Partner logo ${(index % logos.length) + 1}`}
+            className="h-8 flex-shrink-0 mx-4 md:mx-12 lg:mx-16 bg-transparent rounded grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-200"
             style={{ color: '#fff' }}
             initial={{ opacity: 0.5 }}
             whileHover={{ 
@@ -50,7 +30,7 @@ const LogoCarousel = () => {
             }}
           />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

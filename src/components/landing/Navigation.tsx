@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Command, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -6,6 +7,8 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +46,7 @@ const Navigation = () => {
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
     { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
+    { name: "Technical Analyst", href: "/analysis", onClick: () => navigate('/analysis') },
   ];
 
   return (
@@ -55,7 +59,7 @@ const Navigation = () => {
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
             <Command className="w-5 h-5 text-primary" />
             <span className="font-bold text-base">Grid Zer0</span>
           </div>
@@ -72,17 +76,28 @@ const Navigation = () => {
                     item.onClick();
                   }
                 }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                className={`text-sm transition-all duration-300 ${
+                  (item.href.startsWith('/') && location.pathname === item.href) ||
+                  (item.href.startsWith('#') && location.pathname === '/')
+                    ? 'text-primary font-medium'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {item.name}
               </a>
             ))}
-            <Button 
-              onClick={() => scrollToSection('cta')}
+            <Button
+              asChild
               size="sm"
               className="button-gradient"
             >
-              Start Trading
+              <a
+              href="https://discord.gg/DKf2mnUDMp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              Join Discord
+              </a>
             </Button>
           </div>
 
@@ -100,7 +115,12 @@ const Navigation = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                      className={`text-lg transition-colors ${
+                        (item.href.startsWith('/') && location.pathname === item.href) ||
+                        (item.href.startsWith('#') && location.pathname === '/')
+                          ? 'text-primary font-medium'
+                          : 'text-muted-foreground hover:text-foreground'
+                      }`}
                       onClick={(e) => {
                         e.preventDefault();
                         setIsMobileMenuOpen(false);
@@ -115,7 +135,12 @@ const Navigation = () => {
                   <Button 
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      if (location.pathname !== '/') {
+                        navigate('/');
+                        setTimeout(() => scrollToSection('cta'), 100);
+                      } else {
+                        scrollToSection('cta');
+                      }
                     }}
                     className="button-gradient mt-4"
                   >

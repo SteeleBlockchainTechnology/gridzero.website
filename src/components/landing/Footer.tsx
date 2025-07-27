@@ -14,7 +14,13 @@ const Footer = () => {
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon">
-                  <Twitter className="w-4 h-4" />
+                  <a
+                    href="https://x.com/Grid_Zer0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="w-4 h-4" />
+                  </a>
                 </Button>
                 <Button variant="ghost" size="icon">
                   <Github className="w-4 h-4" />
@@ -26,12 +32,12 @@ const Footer = () => {
               <h4 className="font-medium">Trading</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://discord.gg/DKf2mnUDMp" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     Discord
                   </a>
                 </li>
                 <li>
-                  <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://coinmarketcap.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     Markets
                   </a>
                 </li>
