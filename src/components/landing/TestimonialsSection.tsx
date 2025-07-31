@@ -6,7 +6,7 @@ import { Card } from "./ui/card";
 
 const testimonials = [
   {
-    name: "chingchong",
+    name: "Chang",
     role: "Professional Trader",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
     content: "The one on one mentorship and advanced trading insights have significantly improved my trading performance."
@@ -18,7 +18,7 @@ const testimonials = [
     content: "GridZer0's institutional-grade tools have transformed our trading strategy. The AI integration has saved me thousands of hours."
   },
   {
-    name: "dave",
+    name: "David",
     role: "Early Crypto Investor",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
     content: "The customer support is exceptional, and the platform's cutting edge education made getting started with crypto trading seamless. A game-changer for both beginners and pros."
@@ -30,7 +30,7 @@ const testimonials = [
     content: "I have seen remarkable improvement in my win rate since joining GridZer0. The AI technical analyst and hedge fund are particularly impressive."
   },
   {
-    name: "carpenter",
+    name: "Richard",
     role: "woodworker",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
     content: "The regular updates keep us at the forefront of emerging strategies and information. It's exactly what the crypto community needed."

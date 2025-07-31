@@ -46,7 +46,7 @@ const Navigation = () => {
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
     { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
-    { name: "Technical Analyst", href: "/analysis", onClick: () => navigate('/analysis') },
+    /*{ name: "Technical Analyst", href: "/analysis", onClick: () => navigate('/analysis') },*/
   ];
 
   return (
@@ -59,9 +59,9 @@ const Navigation = () => {
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-            <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">Grid Zer0</span>
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}> 
+            <img src="/logo.svg" alt="Grid Zero Logo" className="w-12 h-12" />
+            <span className="font-bold text-base">Grid Zero</span>
           </div>
 
           {/* Desktop Navigation */}
