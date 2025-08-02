@@ -31,7 +31,7 @@ const testimonials = [
   },
   {
     name: "Richard",
-    role: "woodworker",
+    role: "Woodworker",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
     content: "The regular updates keep us at the forefront of emerging strategies and information. It's exactly what the crypto community needed."
   },

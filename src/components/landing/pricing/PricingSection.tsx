@@ -78,7 +78,7 @@ export const PricingSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <PricingTier
-          name="Begginer"
+          name="Beginner"
           price="$0"
           description="Perfect for beginners starting their crypto journey"
           features={[
